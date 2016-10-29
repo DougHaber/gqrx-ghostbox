@@ -23,7 +23,7 @@ This program is written in Perl.  The only dependency beyond a recent version of
 
 [Gqrx](http://gqrx.dk/) is required, and must be setup to allow remote connections from the host this program is running on.  For some notes on settings that up, see the [GQRX::Remote README](https://github.com/DougHaber/gqrx-remote#setting-up-gqrx) and [Gqrx's documentation](http://gqrx.dk/doc/remote-control).  The Gqrx application itself officially runs on Linux, MacOS and Raspberry Pi. An unoffical version exists for Windows. For more information, see the [Gqrx download page](http://gqrx.dk/download).
 
-**NOTE**: SDR and Gqrx are not always trivial to work with and this is a command-line tool.  A final dependency would be some level of comfort working with these types of things and a willingness to tinker.  If you have not used SDR, Gqrx, and the Linux command line before, do not expect it to work without some effort.
+**NOTE**: SDR and Gqrx are not always trivial to work with and this is a command-line tool.  A final dependency would be some level of comfort working with these types of things and a willingness to tinker.  If you have not used SDR, Gqrx, and the command line before, do not expect it to work without some effort.
 
 
 ## Usage
