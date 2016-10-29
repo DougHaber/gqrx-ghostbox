@@ -41,6 +41,9 @@ To use this program:
 5. Enter a deep trance state and begin your communion with the spirits.
 
 
+Many examples of ghost box usage can be found on youtube. Generally, it involves asking questions and then listening for a response.  Some people believe a medium or trance state is necessary in order for it to work.  If you search for "ghost box" or "spirit box", you will find information on different usage styles.
+
+
 ### Command Line Options
 
 ```
