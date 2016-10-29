@@ -10,6 +10,8 @@ This utility controls the [Gqrx](http://gqrx.dk/) SDR receiver program.  Unlike 
 
 If we assume that the phenomena is a real thing, this style tool provides researchers with more options and controls than traditional ghost boxes at a lower cost.  A cheap USB RTLSDR is enough to get started, and it is easy to experiment with different antenna configurations as well as radio and scanning parameters to figure out what is most effective.
 
+If this tool works for you, please share any succesful results [here](https://github.com/DougHaber/gqrx-ghostbox/issues/1).
+
 
 ## Installation and Dependencies
 
@@ -77,7 +79,7 @@ Usage: gqrx-ghostbox [OPTIONS]
 ### Usage Examples
 
 ```bash
-# Run gqrx-ghostbox with the default parameters:
+# Run gqrx-ghostbox with the default parameters
 $ gqrx-ghostbox
 
 # Run against Gqrx on a remote server
