@@ -13,7 +13,7 @@ If we assume that the phenomena is a real thing, this style tool provides resear
 
 ## Installation and Dependencies
 
-In order to use this program you must have a software defined radio device. A $10 RTLSDR could work, as could more expensive and capable options.  For people starting out, I recommend picking an R820T2 based USB stick.  Many well reviewed options can be found on Amazon for between $10 and $25 dollars. (Note that these will not support turning the AM spectrum without an upconverter.)
+In order to use this program you must have a software defined radio device. A $10 RTLSDR could work, as could more expensive and capable options.  For people starting out, I recommend picking an R820T2 based USB stick.  Many well reviewed options can be found on Amazon for between $10 and $25 dollars. (Note that these will not support tuning the AM spectrum without an upconverter.)
 
 Traditional ghost boxes usually scan the AM radio spectrum.  With this tool you can scan any range of the spectrum that your SDR supports.  Unfortunately, the cheaper SDR devices, such as what was recommended above will not receive AM.  To receive AM you will either need a more capable SDR device or another device known as an upconverter.
 
@@ -21,7 +21,7 @@ This program is written in Perl.  The only dependency beyond a recent version of
 
 [Gqrx](http://gqrx.dk/) is required, and must be setup to allow remote connections from the host this program is running on.  For some notes on settings that up, see the [GQRX::Remote README](https://github.com/DougHaber/gqrx-remote#setting-up-gqrx) and [Gqrx's documentation](http://gqrx.dk/doc/remote-control).  The Gqrx application itself officially runs on Linux, MacOS and Raspberry Pi. An unoffical version exists for Windows. For more information, see the [Gqrx download page](http://gqrx.dk/download).
 
-**NOTE**: SDR and Gqrx are not always trivial to work with, and this is a command-line tool.  A final dependency would be some level of comfort working with these types of things and a willingness to tinker.  If you have not used SDR, Gqrx, and the Linux command line before, do not expect it to work without some effort.
+**NOTE**: SDR and Gqrx are not always trivial to work with and this is a command-line tool.  A final dependency would be some level of comfort working with these types of things and a willingness to tinker.  If you have not used SDR, Gqrx, and the Linux command line before, do not expect it to work without some effort.
 
 
 ## Usage
