@@ -17,7 +17,7 @@ If this tool works for you, please share any succesful results [here](https://gi
 
 In order to use this program you must have a software defined radio device. A $10 RTLSDR could work, as could more expensive and capable options.  For people starting out, I recommend picking an R820T2 based USB stick.  Many well reviewed options can be found on Amazon for between $10 and $25 dollars. (Note that these will not support tuning the AM spectrum without an upconverter.)
 
-Traditional ghost boxes usually scan the AM radio spectrum.  With this tool you can scan any range of the spectrum that your SDR supports.  Unfortunately, the cheaper SDR devices, such as what was recommended above will not receive AM.  To receive AM you will either need a more capable SDR device or another device known as an upconverter.
+Traditional ghost boxes usually scan the range of AM or FM frequencies.  With this tool you can scan any range of the spectrum that your SDR supports.  Unfortunately, the cheaper SDR devices, such as what was recommended above will not receive AM.  To receive AM you will either need a more capable SDR device or another device known as an upconverter.
 
 This program is written in Perl.  The only dependency beyond a recent version of Perl is the [GQRX::Remote](https://github.com/DougHaber/gqrx-remote) module.  This may be installed via the package on GitHub, or from [CPAN](https://metacpan.org/pod/GQRX::Remote).  Here are some [notes on installing CPAN modules](http://www.cpan.org/modules/INSTALL.html).
 
