@@ -104,8 +104,8 @@ The `--scanning-mode` supports 4 different options:
 | Mode    | Description |
 |---------|-------------|
 | forward | Each step increase the current frequency by the `--scanning-step` size.  When exceeding `--max`, start back at `--min`. |
-| reverse | Each step decrease the current frequency by the `--scanning-step` size.  When exceeding `--min`, start back at `--max`. |
-| bounce  | Start randomly in either `forward` or `backward` mode. When exceeding the `--min` or `--max` limit, switch to the opposite mode. (This is the default) |
+| reverse | Each step decrease the current frequency by the `--scanning-step` size.  When falling below `--min`, start back at `--max`. |
+| bounce  | Start randomly in either `forward` or `backward` mode. When going beyond the `--min` or `--max` limit, switch to the opposite mode. (This is the default) |
 | random  | Each step choose a new random frequency within the `--min` and `--max` range. |
 
 
