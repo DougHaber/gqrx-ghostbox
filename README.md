@@ -2,7 +2,7 @@
 
 ## Overview
 
-This program makes it possible to use software defined radio (SDR) as a ghost box / electronic voice phenomenon (EVP) tool.  A ghost box is a device sometimes used by paranormal researchers to talk to spirits, the dead, disembodied entities, shape shifting lizard people, and other intra-dimensional fauna.
+This program makes it possible to use software defined radio (SDR) as a ghost box.  A ghost box, or sometimes spirit box, is a device used by paranormal researchers to talk to spirits, the dead, disembodied entities, shape shifting lizard people, and other intra-dimensional fauna.
 
 Some ghost boxes have electronics that give them distinct properties, and others are effectively radio scanners.  This tool is of the radio scanning style.
 
