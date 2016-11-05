@@ -157,7 +157,7 @@ use GQRX::Remote;
 	}
 
         if (! $self->{remote}->set_frequency($self->{frequency})) {
-            die "ERROR: set_frequency() failed.\n";
+            die "ERROR: set_frequency() failed: " . $self->{remote}->error() . "\n";
         }
     }
 
