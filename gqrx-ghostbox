@@ -232,10 +232,10 @@ EOF
 	elsif ($options->{scanning_step} <= 0) {
 	    $self->show_usage("Scanning step must be greater than 0");
 	}
-	elsif ($options->{min_frequency} < 0) {
+	elsif ($options->{min_frequency} <= 0) {
 	    $self->show_usage("The minimum frequency must be greater than 0");
 	}
-	elsif ($options->{max_frequency} < 0) {
+	elsif ($options->{max_frequency} <= 0) {
 	    $self->show_usage("The maximum frequency must be greater than 0");
 	}
 	elsif ($options->{min_frequency} >= $options->{max_frequency}) {
