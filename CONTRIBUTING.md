@@ -7,9 +7,11 @@ Not all changes proposed will be accepted.  This can happen for a large number o
 
 ## Contribution Guidelines
 
-* By contributing to this project you are certifying that the code you share is written by yourself and that you have full ownership and permissions to share it with the project.  By contributing you are releasing your code under the same license found in the LICENSE file, and that you understand this is irrevocable.  Your changes may update the LICENSE file to add in any appropriate copyright notices.
+* By contributing to this project you are certifying that the changes you share are written by yourself and that you have full ownership and permissions to share them with the project.  By contributing you are releasing your code under the same license found in the LICENSE file.  Your changes may update the LICENSE file to add in any appropriate copyright notices.
 
-* All contributions must follow the same styles as the surrounding code.  Spacing and newline usage should be the same as is seen elsewhere, as should naming conventions.  If the surrounding code camel cases variables, then do the same, but if it uses underscores, do that.
+* Adding in third-party dependencies and libraries is discouraged and should only be done when necessary or very worthwhile.  Always update affected installation instructions, and if a dependency is included in the repository, be sure to update the README.md and LICENSE file with credit and copyright notices with information on the new dependencies.
+
+* All contributions must follow the same styles as the surrounding code.  Spacing and newline usage should be the same as is seen elsewhere, as should naming conventions.  If the surrounding code uses camel cases variables, then do the same, but if it uses underscores, do that.
 
 * Code should be written in ways that fit in with the existing code base.  For example, an ECMAScript 5 project should use `var` instead of `let`, and a contribution to Perl code that makes use of `print` everywhere shouldn't instead contain usage of `say`.  Contributed code should look like it belongs in the code base, and not like it is written by someone different.
 
