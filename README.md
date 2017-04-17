@@ -18,7 +18,12 @@ If we assume that the phenomena is a real thing, this style tool provides resear
 
 If this tool works for you, please share any succesful results [here](https://github.com/DougHaber/gqrx-ghostbox/issues/1).
 
+
+## Web Interface
+
 ![Screenshot](screenshot.png)
+
+While this tool can be fully used from the command line, a web interface is also provided to make it easier to use.  The web interface makes it possible to change the settings of the running process.  It also includes noise-generators to mimic the functionality of some commercial ghost boxes.
 
 
 ## Installation and Dependencies
