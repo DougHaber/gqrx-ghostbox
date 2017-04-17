@@ -1,0 +1,117 @@
+.main {
+    margin-top: 1rem;
+    background-color: #424242;
+    box-shadow: 5px 10px 10px black;
+    color: #bbbbbb;
+}
+
+.header {
+    background-color: #525252;
+    padding: 2rem;
+}
+
+.body {
+    padding: 3rem;
+}
+
+canvas#display {
+    margin-top: 2.5rem;
+    border-top: .3rem solid #222;
+    border-left: .3rem solid #222;
+    border-right: .3rem solid #797979;
+    border-bottom: .3rem solid #898989;
+}
+
+
+select {
+    font-size: 1.3rem;
+    background-color: #222;
+    height: 3rem;
+    padding: 0.3rem;
+
+    border-bottom: .3rem solid black;
+    border-right: .3rem solid black;
+    border-left: .3rem solid #797979;
+    border-top: .3rem solid #898989;
+}
+
+select#preset-select {
+    height: 10rem;
+    width: 100%;
+
+    overflow-y: auto;
+
+    background-color: #33688c;
+
+    border-top: .3rem solid #222;
+    border-left: .3rem solid #222;
+    border-right: .3rem solid #797979;
+    border-bottom: .3rem solid #898989;
+}
+
+button, button:hover, button:focus {
+    color: #bbbbbb;
+
+    font-size: 1.3rem;
+    text-transform: none;
+
+    background-color: #222;
+    height: 3rem;
+    min-width: 5rem;
+    padding: 0.3rem;
+
+    border-bottom: .3rem solid black;
+    border-right: .3rem solid black;
+    border-left: .3rem solid #797979;
+    border-top: .3rem solid #898989;
+
+    line-height: 0px;
+    margin-left: 1rem;
+}
+
+button:active, button.pressed {
+    border-top: .3rem solid black;
+    border-left: .3rem solid black;
+    border-right: .3rem solid #797979;
+    border-bottom: .3rem solid #898989;
+}
+
+input.pending, select.pending, button.pending {
+    color: #ffa81e;
+}
+
+input.error, select.error, button.error {
+    color: #ff301e;
+}
+
+input[type=range].pending {
+    outline: 1px solid #FFA81E;
+}
+
+input {
+    background-color: #33688c;
+    width: 8rem;
+    padding: 0.3rem;
+    margin-bottom: 0px;
+
+    border-top: .3rem solid #222;
+    border-left: .3rem solid #222;
+    border-right: .3rem solid #797979;
+    border-bottom: .3rem solid #898989;
+}
+
+input#preset-name {
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+table td {
+    border-bottom: 0px;
+    padding: 0.3rem;
+}
+
+input[type=range] {
+    width: 100%;
+    cursor: pointer;
+    background-color: #424242; /* Improve look for FF */
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>GQRX::GhostBox</title>
+
+    <link rel="stylesheet" href="contrib/skeleton/normalize.css">
+    <link rel="stylesheet" href="contrib/skeleton/skeleton.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="GhostBox.js" type="text/javascript"></script>
+    <script src="contrib/noise.js/noise.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+    <div class="container main">
+
+      <!-- Header -->
+      <div class="header row">
+
+        <div class="three columns">
+          <img src="/ghostbox-transparent.png" class="u-max-full-width">
+        </div>
+
+        <div class="eight columns">
+          <canvas id="display" height="150" width="500"
+                  class="u-max-full-width"></canvas>
+
+        </div>
+
+      </div>
+
+      <!-- Body -->
+      <div class="body row">
+        <div class="four columns">
+          <table>
+            <tr>
+              <td>Demodulator Mode</td>
+              <td>
+                <select id="demodulator-mode">
+                  <option>WFM</option>
+                  <option>WFM_ST</option>
+                  <option>FM</option>
+                  <option>AM</option>
+
+                  <option>CW</option>
+                  <option>CWL</option>
+                  <option>CWU</option>
+                  <option>LSB</option>
+                  <option>USB</option>
+                  <option>WFM_ST_OIRT</option>
+                </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Scanning Mode</td>
+              <td>
+                <select id="scanning-mode">
+                  <option value="FORWARD">Forward</option>
+                  <option value="REVERSE">Reverse</option>
+                  <option value="BOUNCE">Bounce</option>
+                  <option value="RANDOM">Random</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+
+
+          Noise Generators<br>
+          <table>
+            <tr>
+              <td>
+                <button id="white-noise">White</button>
+              </td>
+              <td>
+                <input id="white-noise-volume" type="range" min="0" max="1" step="0.05"></input>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <button id="pink-noise">Pink</button>
+              </td>
+              <td>
+                <input id="pink-noise-volume" type="range" min="0" max="1" step="0.05"></input>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <button id="brown-noise">Brown</button>
+              </td>
+              <td>
+                <input id="brown-noise-volume" type="range" min="0" max="1" step="0.05"></input>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="four columns">
+          <table>
+            <tr>
+              <td>Min Frequency (KHz)</td>
+              <td><input id="min-frequency"></input></td>
+            </tr>
+            <tr>
+              <td>Max Frequency (KHz)</td>
+              <td><input id="max-frequency"></input></td>
+            </tr>
+            <tr>
+              <td>Scanning Step (KHz)</td>
+              <td><input id="scanning-step"></input></td>
+            </tr>
+
+            <tr>
+              <td>Sleep (ms)</td>
+              <td><input id="sleep-time"></input></td>
+            </tr>
+          </table>
+
+          <button id="reset-button">Reset</button>
+          <button id="update-button">Update</button>
+        </div>
+
+        <div class="four columns">
+          Presets<br>
+          <select size="5" id="preset-select">
+            <option>FM bounce</option>
+            <option>Random 800 - 900mhz</option>
+          </select>
+
+          <br>
+
+          Name: <input id="preset-name"></input>
+
+          <br>
+
+          <button>Load</button>
+          <button>Save</button>
+          <button>Delete</button>
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+</html>

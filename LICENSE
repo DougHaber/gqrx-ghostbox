@@ -1,5 +1,5 @@
-gqrx-ghostbox -  Utility for EVP/ghost box style radio scanning with GQRX
-Copyright (c) 2016, Douglas Haber
+gqrx-ghostbox - Utility for ghost box style radio scanning with Gqrx
+Copyright (c) 2016 - 2017, Douglas Haber
 All rights reserved
 
 
@@ -29,3 +29,23 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+
+The package also includes:
+
+* Noise.js
+  Copyright (c) 2013 Zach Denton
+  MIT License
+  https://github.com/zacharydenton/noise.js
+
+* Skeleton.css
+  Copyright (c) 2011-2014 Dave Gamache
+  MIT License
+  https://github.com/dhg/SKeleton
+
+* Normalize.css (via Skeleton.css)
+  Copyright (c) Nicolas Gallagher and Jonathan Neal
+  MIT License
+  https://github.com/necolas/normalize.css
+

@@ -1,16 +1,24 @@
 ![gqrx-ghostbox logo](ghostbox.png)
 
+
+# WIP-BRANCH
+
+**NOTE:** This is the Work-In-Progress branch.  What is found here may be unrefined and undocumented.  It will have bugs and incomplete features.  This is not intended for general use.  Please do not file bugs or ask for support for anything found in this branch.  When ready, the new features will be merged into the master branch.
+
+
 ## Overview
 
 This program makes it possible to use software defined radio (SDR) as a ghost box.  A ghost box, or sometimes spirit box, is a device used by paranormal researchers to talk to spirits, the dead, disembodied entities, shape shifting lizard people, and other intra-dimensional fauna.
 
-Some ghost boxes have electronics that give them distinct properties, and others are effectively radio scanners.  This tool is of the radio scanning style.
+Some ghost boxes have electronics that give them distinct properties, and others are effectively radio scanners.  This tool is of the radio scanning style.  It also includes noise generators (thanks to [noise.js](https://github.com/zacharydenton/noise.js).
 
 This utility controls the [Gqrx](http://gqrx.dk/) SDR receiver program.  Unlike more traditional ghost boxes, which are stand alone devices, this setup makes it easy to experiment with different options.  Gqrx provides a live visualization of the spectrum and the ability to fine tune and control many parameters of the radio, such as gain, demodulation, squelch, and noise filtering.  Ghost boxes usually scan AM or FM.  By using SDR, we have a vastly larger spectrum available (though AM may require an upconverter, depending on which SDR is used.)
 
 If we assume that the phenomena is a real thing, this style tool provides researchers with more options and controls than traditional ghost boxes at a lower cost.  A cheap USB RTLSDR is enough to get started, and it is easy to experiment with different antenna configurations as well as radio and scanning parameters to figure out what is most effective.
 
 If this tool works for you, please share any succesful results [here](https://github.com/DougHaber/gqrx-ghostbox/issues/1).
+
+![Screenshot](screenshot.png)
 
 
 ## Installation and Dependencies
@@ -23,7 +31,8 @@ This program is written in Perl.  The only dependency beyond a recent version of
 
 [Gqrx](http://gqrx.dk/) is required, and must be setup to allow remote connections from the host this program is running on.  For some notes on settings that up, see the [GQRX::Remote README](https://github.com/DougHaber/gqrx-remote#setting-up-gqrx) and [Gqrx's documentation](http://gqrx.dk/doc/remote-control).  The Gqrx application itself officially runs on Linux, MacOS and Raspberry Pi. An unoffical version exists for Windows. For more information, see the [Gqrx download page](http://gqrx.dk/download).
 
-**NOTE**: SDR and Gqrx are not always trivial to work with and this is a command-line tool.  A final dependency would be some level of comfort working with these types of things and a willingness to tinker.  If you have not used SDR, Gqrx, and the command line before, do not expect it to work without some effort.
+
+**Note:** A final dependency may be a level of comfort working with these types of tools.  This program is a command line tool which provides a web interface via a local port.  SDR and Gqrx may have their own learning curve.  If you have not used SDR, Gqrx, and the command line before, do not expect it to work without some effort.
 
 
 ## Usage
@@ -38,7 +47,9 @@ To use this program:
 
 4. Modify any parameters in Gqrx as needed, such as the gain, squelch, and filtering.
 
-5. Enter a deep trance state and begin your communion with the spirits.
+5. If you want to use the web interface, in open a web browser pointed the local host.  By default, this would be [localhost:8888](http://localhost:8888), though this can be changed from the settings and can vary from the configuration of the local system.
+
+6. Enter a deep trance state and begin your communion with the spirits.
 
 
 Many examples of ghost box usage can be found on youtube. Generally, it involves asking questions and then listening for a response.  Some people believe a medium or trance state is necessary in order for it to work.  If you search for "ghost box" or "spirit box", you will find information on different usage styles.
@@ -50,7 +61,7 @@ Many examples of ghost box usage can be found on youtube. Generally, it involves
 Usage: gqrx-ghostbox [OPTIONS]
   GENERAL:
     -h, --help                          Display this detailed help message
-    -q, --quiet                         Quiet mode - only output errors
+    --debug                             Print extra debugging output
 
   CONNECTION:
     -H, --host={IP_ADDRESS}             GQRX Host IP (default is 127.0.0.1)
@@ -61,7 +72,7 @@ Usage: gqrx-ghostbox [OPTIONS]
     -d, --demodulator-mode={MODE}       The GQRX demodulator mode to use
                                         (default is 'WFM')
                                         Options: AM, CW, CWL, CWU, FM, LSB, USB,
-                                	    WFM, WFM_ST, WFM_ST_OIRT
+                                	WFM, WFM_ST, WFM_ST_OIRT
 
   SCANNING SETTINGS:
     --min, --min-frequency={FREQUENCY}  Minimum frequency to scan in KHz
@@ -70,12 +81,27 @@ Usage: gqrx-ghostbox [OPTIONS]
                                         (default is '108000', FM max)
     -m, --scanning-mode={MODE}          Method of scanning
                                         (default is 'bounce')
-                                        Options: forward, backward, bounce, random
+                                        Options: forward, reverse, bounce, random
     -s, --scanning-step={STEP_SIZE}     How many KHz to move when scanning
                                         (default is 150)
-                                        This has no effect in "random" mode
-    --S, --sleep={TIME}			        Time to hold a frequency for each step
-	                                    in ms. (default is '30')
+					This has no effect in "random" mode
+    -S, --sleep={TIME}			Time to hold a frequency for each step
+	                                in ms. (default is '100')
+
+
+  NOISE GENERATORS: (web client only)
+    --brown=[volume]                    Enable brown noise generation at the
+                                        specified volume (0 to 1, default is 0.7)
+    --pink=[volume]                     Enable pink noise generation at the
+                                        specified volume (0 to 1, default is 0.7)
+    --white=[volume]                    Enable white noise generation at the
+                                        specified volume (0 to 1, default is 0.7)
+
+  WEB SERVER:
+    -n, --no-web                        Do not run a web server
+    -g, --global-web                    Listen on all interfaces instead of only local
+                                        (WARNING: For security, this is discouraged.)
+    -w, --web-port={PORT}               Port to listen on (default is 8888)
 ```
 
 
@@ -105,7 +131,7 @@ The `--scanning-mode` supports 4 different options:
 |---------|-------------|
 | forward | Each step increase the current frequency by the `--scanning-step` size.  When exceeding `--max`, start back at `--min`. |
 | reverse | Each step decrease the current frequency by the `--scanning-step` size.  When falling below `--min`, start back at `--max`. |
-| bounce  | Start randomly in either `forward` or `backward` mode. When going beyond the `--min` or `--max` limit, switch to the opposite mode. (This is the default) |
+| bounce  | Start randomly in either `forward` or `reverse` mode. When going beyond the `--min` or `--max` limit, switch to the opposite mode. (This is the default) |
 | random  | Each step choose a new random frequency within the `--min` and `--max` range. |
 
 
@@ -127,36 +153,10 @@ If you do use this tool and have good results, please share them to help others.
 
 ## Copyright and License
 
-```
-Copyright (c) 2016, Douglas Haber
-All rights reserved
+This program is distributed under a BSD license.  Please see the [LICENSE file](LICENSE) in the distribution for details.
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above
-      copyright notice, this list of conditions and the following
-      disclaimer in the documentation and/or other materials provided
-      with the distribution.
-    * The names names of the authors may not be used to endorse or
-      promote products derived from this software without specific
-      prior written permission.
+This package includes the following third-party dependencies:
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND ITS
-CONTRIBUTERS ''AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
-INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR ITS
-CONTRIBUTERS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
-USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
-OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-SUCH DAMAGE.
-```
-
-
+* [noise.js](https://github.com/zacharydenton/noise.js)
+* [Skeleton CSS](http://getskeleton.com/)
+* [normalize.css](https://github.com/necolas/normalize.css)
