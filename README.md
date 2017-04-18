@@ -10,7 +10,7 @@
 
 This program makes it possible to use software defined radio (SDR) as a ghost box.  A ghost box, or sometimes spirit box, is a device used by paranormal researchers to talk to spirits, the dead, disembodied entities, shape shifting lizard people, and other intra-dimensional fauna.
 
-Some ghost boxes have electronics that give them distinct properties, and others are effectively radio scanners.  This tool is of the radio scanning style.  It also includes noise generators (thanks to [noise.js](https://github.com/zacharydenton/noise.js).
+Some ghost boxes have electronics that give them distinct properties, and others are effectively radio scanners.  This tool is of the radio scanning style.  It also includes noise generators (thanks to [noise.js](https://github.com/zacharydenton/noise.js).)
 
 This utility controls the [Gqrx](http://gqrx.dk/) SDR receiver program.  Unlike more traditional ghost boxes, which are stand alone devices, this setup makes it easy to experiment with different options.  Gqrx provides a live visualization of the spectrum and the ability to fine tune and control many parameters of the radio, such as gain, demodulation, squelch, and noise filtering.  Ghost boxes usually scan AM or FM.  By using SDR, we have a vastly larger spectrum available (though AM may require an upconverter, depending on which SDR is used.)
 
